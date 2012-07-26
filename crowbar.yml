@@ -26,6 +26,6 @@ barclamp:
     - apachehadoop
 
 crowbar:
-  layout: 1
+  layout: 2
   order: 200
 
