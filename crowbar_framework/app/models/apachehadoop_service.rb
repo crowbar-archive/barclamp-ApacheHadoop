@@ -14,6 +14,5 @@
 # 
 
 class ApachehadoopService < ServiceObject
-
- 
 end
+
