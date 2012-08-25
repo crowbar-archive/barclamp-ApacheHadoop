@@ -14,18 +14,16 @@
 #
 # Author: RobHirschfeld
 #
-
-barclamp:
-  name: apachehadoop
-  display: Apache Hadoop framework barclamp collection
-  version: 0
-  user_managed: false
-  requires:
-    - @crowbar
-  member:
-    - apachehadoop
-
-crowbar:
-  layout: 2
-  order: 200
+en:
+  nav:
+    apachehadoop: Apache Hadoop
+  barclamp:
+    apachehadoop:
+      index:
+        title: Apache Hadoop
+        barclamp: Project
+        state: Status
+        proposal: Proposal
+        description: Description
+        instructions: Apache Hadoop Framework includes multiple projects and ecosystem components that support large scale data analytics.  Apply proposals in order from top to bottom. Allow each proposal to enter ready state before applying the next one.
 

@@ -1,14 +1,10 @@
-#
-# Barclamp: apachehadoop
-# Recipe: ApacheHadoop_controller.rb
-#
-# Copyright (c) 2012 Dell Inc.
+# Copyright 2012, Dell
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+#  http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,14 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+class BarclampImportApachehadoop < ActiveRecord::Migration
+  def up
+    Barclamp.import_1x 'apachehadoop'
+  end
 
-class ApachehadoopController < BarclampController
-
-  def index
-    @title = I18n.t('title', :scope=>'barclamp.apachehadoop.index')
-    super
+  def down
+    Barclamp.delete(Barclamp.find_by_name 'apachehadoop')
   end
   
 end
-
-  
