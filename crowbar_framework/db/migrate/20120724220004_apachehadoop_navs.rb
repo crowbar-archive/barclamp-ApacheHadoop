@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 #
-class ApachehaddopNavs < ActiveRecord::Migration
+class ApachehadoopNavs < ActiveRecord::Migration
   def self.up
     
     Nav.find_or_create_by_item :item=>'apachehadoop', :parent_item=>'barclamps', :name=>'nav.apachehadoop', :description=>'nav.apachehadoop_description', :path=>"index_barclamp_path(:controller=>'apachehadoop')", :order=>500
