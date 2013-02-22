@@ -25,7 +25,7 @@ barclamp:
   api_version_accepts: "v2"
   user_managed: false
   requires:
-    - @crowbar
+    - '@crowbar'
   member:
     - apachehadoop
 
