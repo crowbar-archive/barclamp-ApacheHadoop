@@ -21,7 +21,7 @@ barclamp:
   version: 0
   user_managed: false
   requires:
-    - @crowbar
+    - '@crowbar'
   member:
     - apachehadoop
 
