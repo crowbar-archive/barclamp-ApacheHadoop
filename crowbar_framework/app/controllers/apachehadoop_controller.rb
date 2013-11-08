@@ -1,6 +1,6 @@
 #
 # Barclamp: apachehadoop
-# Recipe: ApacheHadoop_controller.rb
+# File: apacheHadoop_controller.rb
 #
 # Copyright (c) 2012 Dell Inc.
 #
@@ -26,7 +26,5 @@ class ApachehadoopController < BarclampController
     @title = I18n.t('title', :scope=>'barclamp.apachehadoop.index')
     super
   end
-  
 end
 
-  
