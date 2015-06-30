@@ -15,20 +15,31 @@
 # limitations under the License.
 #
 
-barclamp:
-  name: apachehadoop
-  display: Hadoop framework barclamp collection
-  version: 0
-  user_managed: false
-  requires:
-    - '@crowbar'
-  member:
-    - apachehadoop
+require "simplecov"
 
-crowbar:
-  layout: 1
-  order: 200
+if ENV["CODECLIMATE_REPO_TOKEN"]
+  require "coveralls"
+  require "codeclimate-test-reporter"
 
-nav:
-  barclamps:
-    apachehadoop: index_barclamp_path(:controller=>'apachehadoop')
+  Coveralls.wear!
+  CodeClimate::TestReporter.start
+
+  SimpleCov.start do
+    add_filter "/spec"
+
+    formatter SimpleCov::Formatter::MultiFormatter[
+      SimpleCov::Formatter::HTMLFormatter,
+      CodeClimate::TestReporter::Formatter
+    ]
+  end
+else
+  SimpleCov.start do
+    add_filter "/spec"
+  end
+end
+
+require "rspec"
+
+RSpec.configure do |config|
+  config.mock_with :rspec
+end

@@ -15,20 +15,21 @@
 # limitations under the License.
 #
 
-barclamp:
-  name: apachehadoop
-  display: Hadoop framework barclamp collection
-  version: 0
-  user_managed: false
-  requires:
-    - '@crowbar'
-  member:
-    - apachehadoop
+source 'https://rubygems.org'
 
-crowbar:
-  layout: 1
-  order: 200
+group :development do
+  gem 'closure-compiler', '~> 1.1.10'
+  gem 'sass', '~> 3.2.19'
+  gem 'sprockets-standalone', '~> 1.2.1'
+  gem 'sprockets', '~> 2.11.0'
+  gem 'rspec', '~> 3.1.0'
+end
 
-nav:
-  barclamps:
-    apachehadoop: index_barclamp_path(:controller=>'apachehadoop')
+group :test do
+  gem 'simplecov', require: false
+
+  if ENV['CODECLIMATE_REPO_TOKEN']
+    gem 'coveralls', require: false
+    gem 'codeclimate-test-reporter', require: false
+  end
+end
